@@ -1,0 +1,5 @@
+{
+  "name": "Selector de Alumnos por Curso",
+  "description": "Una aplicación para seleccionar un curso y luego ver los alumnos matriculados en él. Los datos se obtienen de una estructura similar a una hoja de cálculo.",
+  "requestFramePermissions": []
+}
