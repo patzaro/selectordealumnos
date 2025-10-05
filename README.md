@@ -1,6 +1,6 @@
 # Selector de Alumnos por Curso
 
-![Vista previa de la aplicación](https://storage.googleapis.com/aide-user-images/c7d36746-d5c4-4b95-bc65-d72b5356b6a0.png)
+![Vista previa de la aplicación](./assets/screenshot.png)
 
 ## Descripción
 
