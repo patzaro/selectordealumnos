@@ -1,5 +1,7 @@
 # Selector de Alumnos por Curso
 
+![Vista previa de la aplicación](https://storage.googleapis.com/aide-user-images/c7d36746-d5c4-4b95-bc65-d72b5356b6a0.png)
+
 ## Descripción
 
 Esta es una aplicación web interactiva construida con React y TypeScript que permite gestionar y visualizar alumnos distribuidos en diferentes cursos. La aplicación comienza con la carga de una lista de alumnos desde un archivo de texto, los asigna a cursos predefinidos y ofrece una interfaz sencilla para seleccionarlos y realizar un seguimiento de sus "confirmaciones".
