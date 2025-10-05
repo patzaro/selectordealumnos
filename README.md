@@ -1,6 +1,6 @@
 # Selector de Alumnos por Curso
 
-![Vista previa de la aplicación](https://github.com/patzaro/selectordealumnos/blob/main/assets/screenshot.png?raw=true)
+![Vista previa de la aplicación](https://github.com/patzaro/selectordealumnos/assets/screenshot.png)
 
 ## Descripción
 
