@@ -1,6 +1,6 @@
 # Selector de Alumnos por Curso
 
-![Vista previa de la aplicación](./assets/screenshot.png)
+![Vista previa de la aplicación](/assets/screenshot.png)
 
 ## Descripción
 
