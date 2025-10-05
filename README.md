@@ -1,8 +1,6 @@
 # Selector de Alumnos por Curso
 
 ![Vista previa de la aplicación](assets/screenshot.png)
-<img width="666" height="666" alt="Pentagram-phi svg" src="https://github.com/user-attachments/assets/71f66486-08ab-4755-9b0c-36b945da5a4a" />
-
 
 ## Descripción
 
