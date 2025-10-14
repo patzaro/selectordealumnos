@@ -8,7 +8,11 @@ Creada en Google AI Studio, con la cuenta jof del wirtz.
 
 ## Descripción
 
-Esta es una aplicación web interactiva construida con React y TypeScript que permite gestionar y visualizar alumnos distribuidos en diferentes cursos. La aplicación comienza con la carga de una lista de alumnos desde un archivo de texto, los asigna a cursos predefinidos y ofrece una interfaz sencilla para seleccionarlos y realizar un seguimiento de sus "confirmaciones".
+Esta es una aplicación web construida con React y TypeScript que permite gestionar y visualizar alumnos distribuidos en diferentes cursos.
+
+Es una chorrada bastante inútil. La hice para probar el workflow AIStudio -> GitHub -> Vercel.
+
+Se carga previamente un listado de nombres. La app asigna 2 o 3 nombres a cada asignatura (tiene 4 asignaturas cargadas). Luego puedo ir seleccionando nombres y voy marcando de una en una, las veces que salen al baño, por ejemplo.
 
 ## Características Principales
 
