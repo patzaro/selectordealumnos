@@ -74,18 +74,20 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileLoad }) => {
         }
     };
 
-    const handleUseSampleData = async () => {
+    const handleUseSampleData = () => {
+        const sampleData = `Sofía García López
+Mateo Rodríguez Pérez
+Valentina Martínez Sánchez
+Santiago González Ramírez
+Isabella Fernández Torres
+Leonardo Gómez Cruz
+Camila Díaz Reyes
+Sebastián Morales Vargas
+Valeria Jiménez Ruiz
+Matías Vázquez Mendoza`;
+        
         setError(null);
-        try {
-            const response = await fetch('/listado.txt');
-            if (!response.ok) {
-                throw new Error('No se pudo cargar el archivo de ejemplo.');
-            }
-            const text = await response.text();
-            processText(text);
-        } catch (err) {
-            setError(err instanceof Error ? err.message : 'Error desconocido al cargar datos de ejemplo.');
-        }
+        processText(sampleData);
     };
 
     return (
