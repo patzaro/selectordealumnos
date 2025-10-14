@@ -10,25 +10,31 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileLoad }) => {
     const [error, setError] = useState<string | null>(null);
     const [isDragging, setIsDragging] = useState(false);
 
-    const processFile = useCallback((file: File) => {
+    const processText = useCallback((text: string) => {
         setError(null);
+        const names = text.split('\n').map(name => name.trim()).filter(name => name.length > 0);
+        
+        if (names.length === 0) {
+            setError('El archivo está vacío o no contiene nombres válidos.');
+            return;
+        }
+        
+        const students: Student[] = names.map((name, index) => ({
+            id: `s${index + 1}`,
+            name,
+            confirmations: 0,
+        }));
+        onFileLoad(students);
+    }, [onFileLoad]);
+
+    const processFile = useCallback((file: File) => {
         if (file && file.type === 'text/plain') {
             const reader = new FileReader();
             reader.onload = (e) => {
                 const text = e.target?.result as string;
-                const names = text.split('\n').map(name => name.trim()).filter(name => name.length > 0);
-                
-                if (names.length === 0) {
-                    setError('El archivo está vacío o no contiene nombres válidos.');
-                    return;
+                if (text) {
+                    processText(text);
                 }
-                
-                const students: Student[] = names.map((name, index) => ({
-                    id: `s${index + 1}`,
-                    name,
-                    confirmations: 0,
-                }));
-                onFileLoad(students);
             };
             reader.onerror = () => {
                 setError('Error al leer el archivo.');
@@ -37,7 +43,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileLoad }) => {
         } else {
             setError('Por favor, sube un archivo de texto plano (.txt).');
         }
-    }, [onFileLoad]);
+    }, [processText]);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -68,6 +74,20 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileLoad }) => {
         }
     };
 
+    const handleUseSampleData = async () => {
+        setError(null);
+        try {
+            const response = await fetch('/listado.txt');
+            if (!response.ok) {
+                throw new Error('No se pudo cargar el archivo de ejemplo.');
+            }
+            const text = await response.text();
+            processText(text);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Error desconocido al cargar datos de ejemplo.');
+        }
+    };
+
     return (
         <div className="w-full max-w-md mx-auto text-center">
              <h1 className="text-4xl font-bold text-slate-800 mb-2">Cargar Alumnos</h1>
@@ -88,6 +108,15 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileLoad }) => {
                 <input id="file-upload" type="file" className="hidden" accept=".txt" onChange={handleFileChange} />
             </label>
             {error && <p className="mt-4 text-sm text-red-600">{error}</p>}
+            <div className="mt-6 text-center">
+                 <p className="text-sm text-slate-500 mb-2">¿No tienes un archivo a mano?</p>
+                 <button 
+                     onClick={handleUseSampleData}
+                     className="px-5 py-2 text-sm bg-indigo-100 text-indigo-700 font-semibold rounded-md shadow-sm hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
+                 >
+                     Usar datos de ejemplo
+                 </button>
+             </div>
         </div>
     );
 };
