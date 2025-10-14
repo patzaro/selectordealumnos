@@ -2,9 +2,9 @@
 
 ## https://selectordealumnos.vercel.app/
 
-Desplegada en Vercel, pues usa React. Se puede desplegar en Github, pero da un poco más de trabajo.
+- Desplegada en Vercel, pues usa React. Se puede desplegar en Github, pero da un poco más de trabajo.
 
-Creada en Google AI Studio, con la cuenta jof del wirtz.
+- Creada en Google AI Studio, con la cuenta jof del wirtz.
 
 ## Descripción
 
