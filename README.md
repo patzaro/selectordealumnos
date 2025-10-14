@@ -1,6 +1,8 @@
 # Selector de Alumnos por Curso
 
-![Vista previa de la aplicación](assets/screenshot.png)
+## https://selectordealumnos.vercel.app/
+
+Desplegada en Vercel, pues usa React. Se puede desplegar en Github, pero da un poco más de trabajo.
 
 ## Descripción
 
