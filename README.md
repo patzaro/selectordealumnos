@@ -16,7 +16,7 @@ Se carga previamente un listado de nombres. La app asigna 2 o 3 nombres a cada a
 
 ## Características principales
 
--   **Carga de Alumnos Dinámica**: La aplicación no utiliza datos estáticos. El usuario debe cargar un archivo `.txt` con un nombre de alumno por línea para poblar la aplicación.
+-   **Carga de alumnos dinámica**: La aplicación no utiliza datos estáticos. El usuario debe cargar un archivo `.txt` con un nombre de alumno por línea para poblar la aplicación.
 -   **Distribución Automática**: Una vez cargados, los alumnos son distribuidos equitativamente entre los cursos disponibles.
 -   **Interfaz de Selección Anidada**: Permite al usuario seleccionar primero un curso y luego un alumno de la lista de matriculados en ese curso.
 -   **Visualización de Perfil**: Muestra una tarjeta de perfil para el alumno seleccionado, incluyendo su nombre, curso, una imagen de perfil generada aleatoriamente y un contador.
