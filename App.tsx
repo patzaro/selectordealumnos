@@ -12,9 +12,12 @@ const App: React.FC = () => {
   const [selectedCourseId, setSelectedCourseId] = useState<string>('');
   const [selectedStudentId, setSelectedStudentId] = useState<string>('');
   
-  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
   const [studentsLoaded, setStudentsLoaded] = useState<boolean>(false);
   const [isConfirmedChecked, setIsConfirmedChecked] = useState<boolean>(false);
+
+  const selectedStudent = useMemo(() => {
+    return students.find(s => s.id === selectedStudentId) || null;
+  }, [students, selectedStudentId]);
 
   const handleFileLoad = (loadedStudents: Student[]) => {
     setStudents(loadedStudents);
@@ -38,15 +41,12 @@ const App: React.FC = () => {
     const courseId = e.target.value;
     setSelectedCourseId(courseId);
     setSelectedStudentId('');
-    setSelectedStudent(null);
     setIsConfirmedChecked(false);
   };
 
   const handleStudentChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const studentId = e.target.value;
     setSelectedStudentId(studentId);
-    const student = students.find(s => s.id === studentId) || null;
-    setSelectedStudent(student);
     setIsConfirmedChecked(false);
   };
 
@@ -59,10 +59,6 @@ const App: React.FC = () => {
         : student
     );
     setStudents(updatedStudents);
-
-    const updatedSelectedStudent = updatedStudents.find(s => s.id === selectedStudentId) || null;
-    setSelectedStudent(updatedSelectedStudent);
-
     setIsConfirmedChecked(false);
   };
 
@@ -79,6 +75,7 @@ const App: React.FC = () => {
 
   const courseOptions = useMemo(() => courses.map(c => ({ value: c.id, label: c.name })), [courses]);
   const studentOptions = useMemo(() => availableStudents.map(s => ({ value: s.id, label: s.name })), [availableStudents]);
+  const courseName = useMemo(() => courses.find(c => c.id === selectedCourseId)?.name || '', [courses, selectedCourseId]);
 
   return (
     <div className="bg-slate-100 min-h-screen flex items-center justify-center font-sans p-4">
@@ -112,7 +109,7 @@ const App: React.FC = () => {
             </main>
             {selectedStudent && (
               <footer className="mt-8 space-y-4">
-                 <StudentCard student={selectedStudent} courseName={courses.find(c => c.id === selectedCourseId)?.name || ''} />
+                 <StudentCard student={selectedStudent} courseName={courseName} />
                  <div className="bg-white rounded-xl shadow-lg p-4 flex items-center justify-between animate-fade-in-up transition-all duration-500">
                     <div className="flex items-center">
                          <input 
