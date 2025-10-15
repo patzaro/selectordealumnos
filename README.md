@@ -12,7 +12,7 @@ Esta es una aplicación web construida con React y TypeScript que permite llevar
 
 Es una chorrada bastante inútil. La hice para probar el workflow AIStudio -> GitHub -> Vercel.
 
-Se carga previamente un listado de alunos. La app asigna 2 o 3 nombres a cada asignatura (tiene 4 asignaturas cargadas). Luego puedo ir seleccionando nombres y voy marcando de una en una, las veces que salen al baño, por ejemplo.
+Se carga previamente un listado de alumnos. La app asigna 2 o 3 alumnos a cada asignatura (tiene 4 asignaturas precargadas). Luego puedo ir seleccionando nombres y voy marcando de una en una, las veces que salen al baño, por ejemplo.
 
 ## Características principales
 
