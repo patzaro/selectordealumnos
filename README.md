@@ -8,7 +8,7 @@
 
 ## Descripción
 
-Esta es una aplicación web construida con React y TypeScript que permite llevar registro de acciones de alumnos.
+Esta es una aplicación web construida con React y TypeScript que permite llevar registro de acciones de alumnos. Es un contador. Cada vez que marco una casilla y confirmo, se incrementa en una unidad el contador del alumno.
 
 Es una chorrada bastante inútil. La hice para probar el workflow AIStudio -> GitHub -> Vercel.
 
