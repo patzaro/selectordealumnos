@@ -14,7 +14,7 @@ Es una chorrada bastante inútil. La hice para probar el workflow AIStudio -> Gi
 
 Se carga previamente un listado de nombres. La app asigna 2 o 3 nombres a cada asignatura (tiene 4 asignaturas cargadas). Luego puedo ir seleccionando nombres y voy marcando de una en una, las veces que salen al baño, por ejemplo.
 
-## Características Principales
+## Características principales
 
 -   **Carga de Alumnos Dinámica**: La aplicación no utiliza datos estáticos. El usuario debe cargar un archivo `.txt` con un nombre de alumno por línea para poblar la aplicación.
 -   **Distribución Automática**: Una vez cargados, los alumnos son distribuidos equitativamente entre los cursos disponibles.
